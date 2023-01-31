@@ -1,16 +1,19 @@
 package org.example;
-import java.sql.*;
-import java.util.*;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-class DataBaseConnection{
-    static DataBaseConnection dbc=null;
+class DataBaseConnectionException {
+    static DataBaseConnectionException dbc=null;
     static Logger l=Logger.getLogger("com.api.jar");
-    private DataBaseConnection(){}
+    private DataBaseConnectionException(){}
     Connection conn;
-    public static DataBaseConnection getDataBaseConnection(){
+    public static DataBaseConnectionException getDataBaseConnection(){
         if(dbc==null)
-            dbc=new DataBaseConnection();
+            dbc=new DataBaseConnectionException();
         return dbc;
     }
     protected void newConnection(String url,String user,String pass) throws SQLException{
@@ -22,7 +25,7 @@ class DataBaseConnection{
         l.info("All Connection Closed Successfully");
     }
 }
-public class JDBCPoll {
+public class JDBCPollException {
     public static void main(String[] args) {
         Logger l=Logger.getLogger("com.api.jar");
         Scanner sc=new Scanner(System.in);
@@ -46,7 +49,7 @@ public class JDBCPoll {
                 sc.nextLine();
                 switch (n) {
                     case 1 -> {
-                        DataBaseConnection d1 = DataBaseConnection.getDataBaseConnection();
+                        DataBaseConnectionException d1 = DataBaseConnectionException.getDataBaseConnection();
                         d1.newConnection(url, user, pass);
                     }
                     case 2 -> {
@@ -56,11 +59,11 @@ public class JDBCPoll {
                         String user2 = sc.nextLine();
                         l.info("Enter the password:");
                         String pass2 = sc.nextLine();
-                        DataBaseConnection d2 = DataBaseConnection.getDataBaseConnection();
+                        DataBaseConnectionException d2 = DataBaseConnectionException.getDataBaseConnection();
                         d2.newConnection(url2, user2, pass2);
                     }
                     case 3 -> {
-                        DataBaseConnection d3 = DataBaseConnection.getDataBaseConnection();
+                        DataBaseConnectionException d3 = DataBaseConnectionException.getDataBaseConnection();
                         d3.closeConnection();
                     }
                     default -> l.info("Thanks for coming");

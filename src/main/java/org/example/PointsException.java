@@ -1,19 +1,21 @@
 package org.example;
-import java.util.*;
-import java.util.logging.*;
 
-class Coordi {
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+class CoordiException {
     int x1;
     int y1;
 
-    Coordi(int x1,int y1){
+    CoordiException(int x1, int y1){
         this.x1=x1;
         this.y1=y1;
     }
 
-    public Coordi cloneexample()  {
+    public CoordiException cloneexample()  {
         try {
-            return (Coordi) super.clone();
+            return (CoordiException) super.clone();
         }catch (Exception ex){
             return this;
         }
@@ -29,7 +31,7 @@ class Coordi {
     }
 
 }
-public class Points {
+public class PointsException {
     public static void main(String[] args)  {
         Scanner sc=new Scanner(System.in);
         Logger l = Logger.getLogger("com.api.jar");
@@ -39,12 +41,12 @@ public class Points {
             int x1 = sc.nextInt();
             l.info("Enter the co-ordinates Y: ");
             int y1 = sc.nextInt();
-            Coordi c1 = new Coordi(x1, y1);
+            CoordiException c1 = new CoordiException(x1, y1);
             l.info("Enter the co-ordinate X to check:");
             int x2 = sc.nextInt();
             l.info("Enter the co-ordinates Y to check: ");
             int y2 = sc.nextInt();
-            Coordi c2 = c1.cloneexample();
+            CoordiException c2 = c1.cloneexample();
             l.log(Level.INFO, () -> "The result is: " + c2.equalling(x2, y2));
         }catch (Exception ex){
             l.log(Level.INFO, () -> "Error occur: " + ex);

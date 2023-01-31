@@ -1,7 +1,10 @@
 package org.example;
-import java.util.*;
-import java.util.logging.*;
-class SimpleBank {
+
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+class SimpleBankException {
 
     private final String name;
     private final int accno;
@@ -9,7 +12,7 @@ class SimpleBank {
     static Scanner sc = new Scanner(System.in);
     static Logger l=Logger.getLogger("com.api.jar");
 
-    SimpleBank() {
+    SimpleBankException() {
         l.info("Enter the customer name:");
 
         this.name = sc.nextLine();
@@ -52,7 +55,7 @@ class SimpleBank {
         try {
             l.info("Welcome to TMB bank");
             l.info("What we want to do");
-            SimpleBank s = new SimpleBank();
+            SimpleBankException s = new SimpleBankException();
 
             int n;
             do {

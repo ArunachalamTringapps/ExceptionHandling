@@ -1,8 +1,10 @@
 package org.example;
-import java.util.logging.*;
-import java.util.*;
 
-class BasicShape {
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+class BasicShapeException {
     static Logger l = Logger.getLogger("com.api.jar");
     static Scanner sc = new Scanner(System.in);
     int type;
@@ -15,7 +17,7 @@ class BasicShape {
     private final double radius;
     protected double pi = 3.14;
 
-    public BasicShape(int type, double length, double breadth, double side1, double side2, double radius) {
+    public BasicShapeException(int type, double length, double breadth, double side1, double side2, double radius) {
         this.type=type;
         this.length = length;
         this.breadth = breadth;
@@ -76,7 +78,7 @@ class BasicShape {
                 l.info("Enter the side2:");
                 side2 = sc.nextFloat();
             }
-            BasicShape bs = new BasicShape(type, length, breadth, side1, side2, radius);
+            BasicShapeException bs = new BasicShapeException(type, length, breadth, side1, side2, radius);
             if(bs.perimeter()==0.0){
                 l.info("Enter the correct choice");
             }
