@@ -5,7 +5,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 class BasicShapeException {
-    static Logger l = Logger.getLogger("com.api.jar");
+    static Logger l = Logger.getLogger(BasicSchool.class.getName());
     static Scanner sc = new Scanner(System.in);
     int type;
     private double ar;
@@ -52,7 +52,7 @@ class BasicShapeException {
         return ar;
     }
 
-    public static void main(String[] args) {
+    public static void firstname() {
         try {
 
             l.info("Welcome guys");

@@ -13,7 +13,7 @@ class BasicSchool {
     private double tot;
     private double gpa;
     static Scanner sc = new Scanner(System.in);
-    static Logger l=Logger.getLogger("com.api.jar");
+    static Logger l=Logger.getLogger(BasicSchool.class.getName());
 
     BasicSchool(String name, Double creditot, String[] gra, double tot, double gpa) {
         this.name = name;
@@ -43,7 +43,7 @@ class BasicSchool {
         return "Student Name " + this.name + " has a " + gpa + " GPA";
     }
 
-    public static void main(String[] args) {
+    public static void firstname() {
         try {
 
             String temp;
@@ -97,26 +97,3 @@ class BasicSchool {
     }
 }
 
-class Grade {
-    private final String temp;
-    Logger l=Logger.getLogger("com.api.jar");
-
-    Grade(String temp) {
-        this.temp = temp;
-    }
-
-    public double gradeing() {
-        double gradetemp = 0;
-        switch (temp) {
-            case "A" -> gradetemp = 4;
-            case "B" -> gradetemp = 3;
-            case "C" -> gradetemp = 2;
-            case "D" -> gradetemp = 1;
-            case "F" -> gradetemp = 0;
-            default -> l.info("Enter the correct Grade");
-        }
-
-        return gradetemp;
-
-    }
-}

@@ -10,7 +10,7 @@ class SimpleBankException {
     private final int accno;
     private double bal;
     static Scanner sc = new Scanner(System.in);
-    static Logger l=Logger.getLogger("com.api.jar");
+    static Logger l=Logger.getLogger(SimpleBankException.class.getName());
 
     SimpleBankException() {
         l.info("Enter the customer name:");
@@ -51,7 +51,7 @@ class SimpleBankException {
 
     }
 
-    public static void main(String[] args) {
+    public static void firstname(){
         try {
             l.info("Welcome to TMB bank");
             l.info("What we want to do");
